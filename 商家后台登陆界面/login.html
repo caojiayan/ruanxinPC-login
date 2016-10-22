@@ -5,24 +5,73 @@
 		<title>商家后台登陆界面</title>
 		<script src="js1/jquery-1.7.1.min.js"></script>
 		<script src="js1/login-xin.js"></script>
+		<script type="text/javascript" src="js1/drag.js" ></script>  
 		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/drag.css" />
 	</head>
-	<body onLoad="createCode();">      
+	<body onLoad="createCode();">
+		<!--header开始-->
+		<div class="bj1">
+	        <div class="bj1box">
+	        <ul class="bj1nav">
+                <li style="padding-right: 0;"><a href="#">卖家中心 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">开发平台 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">软信下载 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">软信商城 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">软信官网 |</a>
+      	            <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <span class="Llogo">
+	            <span class="Llogoimg">
+	            	<img src="img/logo.png" alt="logo图标" align="center" width="40px" height="40px">
+	            	<span>软&nbsp信</span>
+	           </span>
+	        </span>
+            <span class="LlogoW">商家后台</span>
+            </div>
+        </div>
+        <!--header结束-->
         <div class="login">
-			<div class="login-head">
-				<div class="login-head-a">
-					<img src="img/logo.png" title="" alt=""/>
-						<p>我&nbsp的</p>
-				</div>
-				<div class="login-head-b">
-					商户后台管理
-				</div>
-			</div>
 			<div class="login-con">
-				<div class="login-a">
-					<form id="loginForm" method=""action="#"onsubmit="return validate()">
+			    <div class="login-a">
+				    <form id="loginForm" method=""action="#"onsubmit="return validate()">
                        <!--密码登陆开始-->
-                      <div class="login-b" style="display: none;">
+                      <div class="login-b">
                       	<div class="login-b-warn">
                       		<div class="b-warntip">
                       			&nbsp;
@@ -47,16 +96,27 @@
                       				<label for="password"><img src="img/iconfont-mima-03.png"align="center"> </label><input type="password" id="password" name="password"/>
                       				<h1 id="p-tip"></h1>
                       			</li>
+                      			<!--滑块验证开始-->
                       			<li>
+                      				<center>
+	                                    <div id="drag"></div>
+                                    </center>
+                                    <script type="text/javascript">
+                                        $('#drag').drag();
+                                    </script>
+                      			</li>
+                      			<!--滑块验证结束-->
+                      			
+                      			<!--<li>
                       				<label ><img src="img/iconfont-mima-02.png"align="center"> </label><input type="text" id="input1" />      
                                     <input type="text" id="checkCode" class="code" style="width: 55px" /> <a href="#" onClick="createCode()">看不清楚</a>      
-                                    <h1 id="c-tip"></h1>
+                                    <h1 id="c-tip"></h1>-->
                       					
                       				<!--输入错误时的输入框样式<input type="text" name="textfield" id="textfield" class="receSum-error" />-->
                                    <!--当输入的手机号码发生错误时，出现如下提示信息
                                    <p class="error-tips-1 spanRed">在此处显示错误的信息提示——如：对不起，您输入的手机号码格式有误，请重新输入！</p>-->
                       				
-                      			</li>
+                      			<!--</li>-->
                       			
                       			<li class="login-x">
 		                          <div class="login-x-a"><input type="submit" name="登&nbsp&nbsp录"value="登&nbsp&nbsp录"id="Button1" onClick="validate();" /><div class="x"></div></div>
@@ -69,7 +129,7 @@
                       	</div>
                       </div>
                       <!--二维码登陆开始-->
-                      <div class="login-c">
+                      <div class="login-c" style="display: none;">
                       	<div class="login-b-warn">
                       		<div class="b-warntip">
                       			&nbsp;
@@ -119,9 +179,20 @@
 					</form>
 				</div>
 			</div>
-			<div class="login-foot">
-				广州软信科技有限公司©2016 粤A * * 备16 * * * * * * 号  
-			</div>
 		</div>
-</body>    
+		<div class="bj4 clearfix">
+            <p style="color:#999;">
+  	            <span>
+  		            <a href="#">申请入驻</a>
+  		            &nbsp;&nbsp;
+  		            <a href="#">申请合作</a>
+  		            &nbsp;&nbsp;
+  		            <a href="#">开发平台</a>
+  		            &nbsp;&nbsp;
+  		            <a href="#">关于软信</a>
+  	            </span>
+  	                                  粤ICP路1507617号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@2016&nbsp;&nbsp;软信&nbsp;&nbsp;版权所有&nbsp; 
+             </p>
+        </div>
+    </body>    
 </html>
